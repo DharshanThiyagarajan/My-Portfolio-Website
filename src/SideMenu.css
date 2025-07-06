@@ -1,0 +1,41 @@
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Start hidden off-screen */
+  width: 250px;
+  height: 100vh;
+  background: #333;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  padding: 80px 20px 20px;
+}
+
+.side-menu.active {
+  transform: translateX(250px); /* Slide in when active */
+}
+
+/* Rest of your existing side menu styles */
+.side-menu ul {
+  list-style: none;
+}
+
+.side-menu li {
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #f5f7fa;
+}
+
+.side-menu li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.side-menu li.active {
+  background: #00BFFF;
+  color: #111;
+}
+
+/* Remove the desktop showing behavior */
+/* It will now only show when triggered */
