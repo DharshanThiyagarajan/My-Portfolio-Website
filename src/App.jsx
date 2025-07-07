@@ -154,17 +154,18 @@ export default function App() {
           <h2>Education</h2>
           <div className="education-container">
             <div className="education-item">
-              <h3>Bachelor's in ECE</h3>
+              <h3>Bachelor's Degree</h3>
               <p className="institution">M. Kumarasamy College of Engineering</p>
-              <p className="duration">2021 - 2025</p>
+              <p className="duration">2022 - 2026</p>
               <p className="description">Specialized in Electronics and Communication Engineering</p>
             </div>
             <div className="divider"></div>
             <div className="education-item">
-              <h3>Higher Secondary</h3>
-              <p className="institution">ABC Matriculation School</p>
-              <p className="duration">2019 - 2021</p>
-              <p className="description">Computer Science with 95% aggregate</p>
+              <h3>Schooling</h3>
+              <p className="institution">Sri Ramakrishna Boys Matriculation Hr Sec School</p>
+              <p className="duration">2020 - 2022</p>
+              <p className="institution">Evaans Matriculation  Hr Sec School</p>
+              <p className="duration">2010 - 2020</p>
             </div>
           </div>
         </section>
@@ -174,65 +175,64 @@ export default function App() {
           <h2>My Projects</h2>
           <div className="projects-container">
             <div className="project-card">
-              <div className="project-image">
-                <img src="https://via.placeholder.com/400x250" alt="Heart Disease Prediction" />
-              </div>
-              <div className="project-details">
-                <h3>Heart Disease Prediction</h3>
-                <p>Machine learning model for early detection and diagnosis of cardiovascular conditions.</p>
-                <div className="tech-stack">
-                  <span>Python</span>
-                  <span>TensorFlow</span>
-                  <span>Flask</span>
-                </div>
-              </div>
-            </div>
+  <div className="project-image">
+    <img src="/flow.png" alt="APP'ENABLES Project" />
+    <div className="project-overlay">
+      <div className="project-details">
+        <a href='https://github.com/DharshanThiyagarajan'><h3>MetroFlow Sentinel</h3></a>
+        <p>Smart Blockage Detection and Clearance in Metropolitan Drainage Systems Using Flow Sensors.</p>
+        <div className="tech-stack">
+          <span>Flow Sensors</span>
+          <span>Embedded C</span>
+          <span>Arduino</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
             <div className="project-card">
-              <div className="project-image">
-                <img src="https://via.placeholder.com/400x250" alt="License Plate Recognition" />
-              </div>
-              <div className="project-details">
-                <h3>License Plate Recognition</h3>
-                <p>Enhanced image processing for accurate license plate recognition in various conditions.</p>
-                <div className="tech-stack">
-                  <span>Python</span>
-                  <span>OpenCV</span>
-                  <span>Tesseract OCR</span>
-                </div>
-              </div>
-            </div>
+  <div className="project-image">
+    <img src="/appenable.png" alt="APP'ENABLES Project" />
+    <div className="project-overlay">
+      <div className="project-details">
+        <h3>APP'ENABLES</h3>
+        <p>An AI-Powered Navigation System for Disabled Individuals to Locate and Utilize Accessibility Features in Unknown Environments.</p>
+        <div className="tech-stack">
+          <span>Flutter</span>
+          <span>Appery</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </section>
 
-        {/* Skills Section */}
         <section id="skills" className="section">
-          <h2>Technical Skills</h2>
-          <div className="skills-container">
-            <div className="skill-category">
-              <h3>Frontend</h3>
-              <div className="skills-list">
-                <img src="/html.png" alt="HTML" title="HTML5" />
-                <img src="/css.png" alt="CSS" title="CSS3" />
-                <img src="/js.png" alt="JavaScript" title="JavaScript" />
-                <img src="/react.png" alt="React" title="React" />
-              </div>
-            </div>
-            <div className="skill-category">
-              <h3>Backend</h3>
-              <div className="skills-list">
-                <img src="/nodejs.png" alt="Node.js" title="Node.js" />
-                <img src="/python.png" alt="Python" title="Python" />
-              </div>
-            </div>
-            <div className="skill-category">
-              <h3>Cloud & DevOps</h3>
-              <div className="skills-list">
-                <img src="/aws.png" alt="AWS" title="AWS" />
-                <img src="/docker.png" alt="Docker" title="Docker" />
-              </div>
-            </div>
-          </div>
-        </section>
+  <h2>Technical Skills</h2>
+  <div className="skills-container">
+    <div className="skills-marquee">
+      <div className="skills-list">
+        {/* Original set */}
+        <img src="/cpp.png" alt="C++" title="C++ Programming" />
+        <img src="/html.png" alt="HTML" title="HTML5" />
+        <img src="/css.png" alt="CSS" title="CSS3" />
+        <img src="/js.png" alt="JavaScript" title="JavaScript" />
+        <img src="/react.png" alt="React" title="React" />
+        <img src="/python.png" alt="Python" title="Python" />
+        <img src="/nodejs.png" alt="Node.js" title="Node.js" />
+        <img src="/aws.png" alt="AWS" title="AWS" />
+        <img src="/docker.png" alt="Docker" title="Docker" />
+        <img src="/flutter.png" alt="Flutter" title="Flutter" />
+        <img src="/java.png" alt="Java" title="Java" />
+        <img src="/c.png" alt="C" title="C Programming" />
+        <img src="/sql.png" alt="SQL" title="SQL" />
+
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Contact Section */}
         <section id="contact" className="section">

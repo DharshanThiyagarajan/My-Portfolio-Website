@@ -1,7 +1,7 @@
 /* Base Styles */
 :root {
   --primary: #00bfffbd;
-  --secondary: #02befc;
+  --secondary: #00bfff;
   --dark: #111;
   --light: #f5f7fa;
   --gray: #333;
@@ -141,11 +141,6 @@ body {
 
 .hero-content {
   display: flex;
-  align-items: center;
-  justify-content:space-between;
-  flex-wrap: wrap;
-  gap: 60px;
-  min-width: 1000px;
 
 }
 
@@ -153,7 +148,7 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
-  max-width: 1000px;
+  min-width: 700px;
 }
 
 .profile-image {
@@ -185,6 +180,7 @@ body {
   font-size: 1.5rem;
   margin: 20px 0;
   min-height: 2rem;
+  color: var(--secondary);
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -237,7 +233,7 @@ body {
   height: 70px;
   border-radius: 50%;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 0 10px var(--primary));
+  filter: drop-shadow(0 0 10px var(--secondary));
 }
 
 .icon:hover {
@@ -260,6 +256,7 @@ body {
 .section h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
+  margin-left: auto;
   color: var(--primary);
   position: relative;
   display: inline-block;
@@ -353,6 +350,7 @@ body {
 
 .project-card {
   flex: 1;
+  position : relative;
   min-width: 300px;
   max-width: 500px;
   background: rgba(255, 255, 255, 0.05);
@@ -368,8 +366,29 @@ body {
   box-shadow: 0 10px 20px rgba(0, 191, 255, 0.2);
 }
 
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
 .project-image img {
   width: 100%;
+  position: relative;
   height: 200px;
   object-fit: cover;
 }
@@ -404,34 +423,22 @@ body {
   font-size: 0.8rem;
 }
 
-/* Skills Section */
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.skill-category {
-  flex: 1;
-  min-width: 250px;
-}
-
-.skill-category h3 {
-  color: var(--primary);
-  margin-bottom: 20px;
-  text-align: center;
-}
-
+/* Updated Skills Section Animation */
+/* Add to your existing CSS without modifying layout */
 .skills-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  width: max-content;
+  animation: skillsFlow 20s linear infinite;
+  padding: 20px 0; /* Prevent clipping */
 }
 
+@keyframes skillsFlow {
+  0% { transform: translateX(-20%); }
+  50% { transform: translateX(20%); } /* Half the container width */
+}
+
+/* Keep your existing hover effects */
 .skills-list img {
   width: 80px;
   height: 80px;
@@ -441,8 +448,25 @@ body {
 }
 
 .skills-list img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
   filter: grayscale(0%) drop-shadow(0 0 10px var(--primary));
+}
+
+/* Wave effect for individual items */
+.skills-list img:nth-child(8n+1) { animation: itemWave 3s infinite 0s; }
+.skills-list img:nth-child(8n+2) { animation: itemWave 3s infinite 0.4s; }
+.skills-list img:nth-child(8n+3) { animation: itemWave 3s infinite 0.8s; }
+.skills-list img:nth-child(8n+4) { animation: itemWave 3s infinite 0.4s; }
+.skills-list img:nth-child(8n+5) { animation: itemWave 3s infinite 0.8s; }
+.skills-list img:nth-child(8n+6) { animation: itemWave 3s infinite 0.4s; }
+.skills-list img:nth-child(8n+7) { animation: itemWave 3s infinite 0.8s; }
+.skills-list img:nth-child(8n+8) { animation: itemWave 3s infinite 0.4s; }
+.skills-list img:nth-child(8n+9) { animation: itemWave 3s infinite 0.8s; }
+/* Continue pattern for all items */
+
+@keyframes itemWave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 /* Contact Section */

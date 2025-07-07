@@ -4,7 +4,7 @@
   left: -250px; /* Start hidden off-screen */
   width: 250px;
   height: 100vh;
-  background: #333;
+  background: #333333;
   z-index: 1000;
   transition: transform 0.3s ease;
   padding: 80px 20px 20px;
