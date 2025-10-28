@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import SideMenu from './SideMenu'
-import dharshPic from './assets/dharshh.jpg'
-import Resume from './assets/Resume dharsh.pdf'
+import Resume from './assets/Dharshan_Resume.pdf'
 import Spline from '@splinetool/react-spline'
+import dharsh1 from './assets/dharsh.jpg'
+import StarfieldBackground from './StarfieldBackground'
+import Chatbot from './chatbot.jsx'
 
 const words = [
   'FULLSTACK DEVELOPER',
@@ -82,37 +84,39 @@ export default function App() {
       document.querySelectorAll('.section').forEach(section => {
         observer.unobserve(section)
       }
-    )
+      )
     }
   }, [])
 
   return (
     <div className="portfolio-container">
+      <StarfieldBackground />
       <div className="cursor-background"></div>
-      
-      {/* Mobile Menu Button */}
-      <button 
-  className={`menu-toggle ${menuOpen ? 'open' : ''}`} 
-  onClick={() => setMenuOpen(!menuOpen)}
->
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
 
-<SideMenu 
-  activeSection={activeSection} 
-  setActiveSection={setActiveSection} 
-  menuOpen={menuOpen}
-  setMenuOpen={setMenuOpen}
-/>
+      {/* Mobile Menu Button */}
+      <button
+        className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <SideMenu
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+      />
 
       <main className="content">
         {/* Hero Section */}
         <section className="hero">
           <div className="hero-content">
+
             <div className="profile-container">
-              <img className="profile-image" src={dharshPic} alt="Dharsh" />
+
               <div className="profile-text">
                 <h4>Hello Spectator!!</h4>
                 <h4>Welcome To My Portfolio I'm</h4>
@@ -123,11 +127,13 @@ export default function App() {
                 <a href={Resume} download>
                   <button className="resume-btn">Download Resume</button>
                 </a>
+
+              </div>
+              <div className="spline-container">
+                <Spline scene="/scene.splinecode" />
               </div>
             </div>
-            <div className="spline-container">
-            <Spline scene="/scene.splinecode" />
-            </div>
+
           </div>
           <div className="social-icons">
             <a href='https://github.com/DharshanThiyagarajan'><img className="icon" src="/github.png" alt="GitHub" /></a>
@@ -142,10 +148,27 @@ export default function App() {
         <section id="about" className="section">
           <h2>About Me</h2>
           <div className="section-content">
-            <p>
-              I am pursuing a Bachelor's degree in Electronics and Communication Engineering at M. Kumarasamy College
-              of Engineering. I aim to work in a dynamic organization where I can apply my skills and grow professionally.
-            </p>
+            <div className="about-me">
+              <p>
+              Aspiring Full Stack Developer | ECE Student @ MKCE <br></br>
+                As an Electronics and Communication Engineering student, I discovered my passion for
+                building complete web solutions. I specialize in creating seamless user experiences
+                on the frontend and designing efficient systems on the backend.<br></br>
+
+                🛠️ Proficient in the MEAN Stack (MongoDB, Express.js, Angular, Node.js)<br></br>
+                💡 Experienced with modern web technologies and agile development practices<br></br>
+                ✨ Passionate about writing clean, maintainable code and following best practices<br></br>
+
+                🎯 Currently seeking full stack developer roles to contribute to meaningful projects
+                and grow as a software professional.<br></br>
+
+                <em> This portfolio was built with React, demonstrating my frontend capabilities. </em>
+              </p>
+            </div>
+            
+            <div className="about-image">
+              <img className='profile-image' src = {dharsh1} alt="Dharsh" />
+            </div>
           </div>
         </section>
 
@@ -175,66 +198,80 @@ export default function App() {
           <h2>My Projects</h2>
           <div className="projects-container">
             <div className="project-card">
-  <div className="project-image">
-    <img src="/flow.png" alt="APP'ENABLES Project" />
-    <div className="project-overlay">
-      <div className="project-details">
-        <a href='https://github.com/DharshanThiyagarajan'><h3>MetroFlow Sentinel</h3></a>
-        <p>Smart Blockage Detection and Clearance in Metropolitan Drainage Systems Using Flow Sensors.</p>
-        <div className="tech-stack">
-          <span>Flow Sensors</span>
-          <span>Embedded C</span>
-          <span>Arduino</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+              <div className="project-image">
+                <img src="/flow.png" alt="APP'ENABLES Project" />
+                <div className="project-overlay">
+                  <div className="project-details">
+                    <h3>MetroFlow Sentinel</h3>
+                    <p>Smart Blockage Detection and Clearance in Metropolitan Drainage Systems Using Flow Sensors.</p>
+                    <div className="tech-stack">
+                      <a href='https://github.com/DharshanThiyagarajan'><span><img src="/git.png" alt="g" />View In Detail</span></a>
+                      {/* <span>Embedded C</span>
+                      <span>Arduino</span> */}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="project-card">
-  <div className="project-image">
-    <img src="/appenable.png" alt="APP'ENABLES Project" />
-    <div className="project-overlay">
-      <div className="project-details">
-        <h3>APP'ENABLES</h3>
-        <p>An AI-Powered Navigation System for Disabled Individuals to Locate and Utilize Accessibility Features in Unknown Environments.</p>
-        <div className="tech-stack">
-          <span>Flutter</span>
-          <span>Appery</span>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+              <div className="project-image">
+                <img src="/appenable.png" alt="APP'ENABLES Project" />
+                <div className="project-overlay">
+                  <div className="project-details">
+                    <h3>APP'ENABLES</h3>
+                    <p>An AI-Powered Navigation System for Disabled Individuals to Locate and Utilize Accessibility Features in Unknown Environments.</p>
+                    <div className="tech-stack">
+                      <a href='https://github.com/DharshanThiyagarajan'><span><img src="/git.png" alt="g" /> View In Detail</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         <section id="skills" className="section">
-  <h2>Technical Skills</h2>
-  <div className="skills-container">
-    <div className="skills-marquee">
-      <div className="skills-list">
-        {/* Original set */}
-        <img src="/cpp.png" alt="C++" title="C++ Programming" />
-        <img src="/html.png" alt="HTML" title="HTML5" />
-        <img src="/css.png" alt="CSS" title="CSS3" />
-        <img src="/js.png" alt="JavaScript" title="JavaScript" />
-        <img src="/react.png" alt="React" title="React" />
-        <img src="/python.png" alt="Python" title="Python" />
-        <img src="/nodejs.png" alt="Node.js" title="Node.js" />
-        <img src="/aws.png" alt="AWS" title="AWS" />
-        <img src="/docker.png" alt="Docker" title="Docker" />
-        <img src="/flutter.png" alt="Flutter" title="Flutter" />
-        <img src="/java.png" alt="Java" title="Java" />
-        <img src="/c.png" alt="C" title="C Programming" />
-        <img src="/sql.png" alt="SQL" title="SQL" />
-
-      </div>
-    </div>
-  </div>
-</section>
-
-        {/* Contact Section */}
+          <h2>Technical Skills</h2>
+          <div className="skills-container">
+            <div className="skills-marquee">
+              <div className="skills-list">
+                {(() => {
+                  const skills = [
+                    { src: "/cpp.png", alt: "C++", title: "C++ Programming" },
+                    { src: "/html.png", alt: "HTML", title: "HTML5" },
+                    { src: "/css.png", alt: "CSS", title: "CSS3" },
+                    { src: "/js.png", alt: "JavaScript", title: "JavaScript" },
+                    { src: "/react.png", alt: "React", title: "React" },
+                    { src: "/python.png", alt: "Python", title: "Python" },
+                    { src: "/nodejs.png", alt: "Node.js", title: "Node.js" },
+                    { src: "/aws.png", alt: "AWS", title: "AWS" },
+                    { src: "/docker.png", alt: "Docker", title: "Docker" },
+                    { src: "/flutter.png", alt: "Flutter", title: "Flutter" },
+                    { src: "/java.png", alt: "Java", title: "Java" },
+                    { src: "/c.png", alt: "C", title: "C Programming" },
+                    { src: "/sql.png", alt: "SQL", title: "SQL" }
+                  ];
+                  const items = [];
+                  let i = 0;
+                  while (i < 50) {
+                    skills.forEach((skill, idx) => {
+                      items.push(
+                        <img
+                          key={`${i}-${idx}`}
+                          src={skill.src}
+                          alt={skill.alt}
+                          title={skill.title}
+                        />
+                      );
+                    });
+                    i++;
+                  }
+                  return items;
+                })()}
+              </div>
+            </div>
+          </div>
+        </section>
         <section id="contact" className="section">
           <h2>Contact Me</h2>
           <div className="contact-container">
@@ -262,7 +299,7 @@ export default function App() {
             </form>
           </div>
         </section>
-
+        <Chatbot />
         <footer>
           <p>&copy; 2025 Dharshan Thiyagarajan. All rights reserved.</p>
         </footer>
